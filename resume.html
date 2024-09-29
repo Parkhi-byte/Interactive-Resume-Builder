@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Resume</h1>
+        <div id="resume-preview">
+            <div id="preview-name"></div>
+            <div id="preview-email"></div>
+            <div id="preview-phone"></div>
+            <div id="preview-summary"></div>
+            <div id="preview-education"></div>
+            <div id="preview-experience"></div>
+        </div>
+        <button onclick="window.print()">Print Resume</button>
+        <button onclick="window.history.back()">Edit Resume</button>
+    </div>
+    <script>
+        // Load resume data from local storage
+        const resumeData = JSON.parse(localStorage.getItem('resumeData'));
+
+        if (resumeData) {
+            document.getElementById('preview-name').textContent = 'Name: ' + resumeData.name;
+            document.getElementById('preview-email').textContent = 'Email: ' + resumeData.email;
+            document.getElementById('preview-phone').textContent = 'Phone: ' + resumeData.phone;
+            document.getElementById('preview-summary').textContent = 'Profile Summary: ' + resumeData.summary;
+            document.getElementById('preview-education').textContent = 'Education: ' + resumeData.education;
+            document.getElementById('preview-experience').textContent = 'Experience: ' + resumeData.experience;
+        } else {
+            // Handle case when no data is found
+            document.getElementById('resume-preview').textContent = 'No resume data found. Please go back to input your details.';
+        }
+    </script>
+</body>
+
+</html>
