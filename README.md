@@ -2,7 +2,13 @@
 
 Hi guys!
 
-For Testing the Project:
+For Testing the Project you can:
+
+Visit the link deployed website link: 
+
+https://courageous-sprite-305701.netlify.app/
+
+OR
 
 Save both HTML files and your style.css in the same directory.
 
